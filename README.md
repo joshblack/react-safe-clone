@@ -1,7 +1,6 @@
 # `react-safe-clone`
 
-> Generic React component that handles safely cloning an element while still
-> retaining any handlers that are defined on the child component.
+> Declarative element cloning for React that doesn't overwrite props on child elements.
 
 ## Usage
 
@@ -14,17 +13,13 @@ yarn add react-safe-clone
 import SafeClone from 'react-safe-clone';
 
 class Interaction extends React.Component {
-  state = {
-    isHovered: false,
-  }
-
   handleOnClick = () => {
     // ...
   }
 
   render() {
     return (
-      <SafeClone onClick={this.handleOnClick}
+      <SafeClone onClick={this.handleOnClick}>
         {this.props.children}
       </SafeClone>
     );

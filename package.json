@@ -1,15 +1,27 @@
 {
   "name": "react-safe-clone",
-  "version": "1.0.0",
-  "main": "index.js",
+  "description": "Declarative element cloning for React that doesn't overwrite props on child elements.",
+  "version": "0.1.0",
+  "main": "lib/index.js",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshblack/react-safe-clone.git"
+  },
+  "homepage": "https://github.com/joshblack/react-safe-clone",
+  "bugs": "https://github.com/joshblack/react-safe-clone/issues",
   "scripts": {
+    "build": "rimraf lib && babel -d lib -q src --ignore \"__tests__\"",
     "ci-check": "yarn test && yarn prettier:diff",
     "prettier": "prettier --write \"**/*.{css,js,md,scss}\"",
     "prettier:diff": "prettier --list-different \"**/*.{css,js,md,scss}\"",
     "test": "jest"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-jest": "^21.2.0",
     "babel-preset-env": "^1.6.1",
@@ -21,7 +33,11 @@
     "jest": "^21.2.1",
     "prettier": "^1.8.2",
     "react": "^16.1.1",
-    "react-dom": "^16.1.1"
+    "react-dom": "^16.1.1",
+    "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^16.1.1"
   },
   "prettier": {
     "jsxBracketSameLine": true,
